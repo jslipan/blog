@@ -4,10 +4,10 @@
 ## To-Do List
 
  - [ ] Html & CSS
-  - [ ] Html
-  - [ ] CSS
-  - [ ] Training: JD-homepage Demo
-- [ ] JavaScript
+   - [X] Html
+   - [ ] CSS
+   - [ ] Training: JD-homepage Demo
+- [ ] JavaScript  
   - [ ] ECMAScript
   - [ ] DOM & BOM
   - [ ] Client-side Web APIs
@@ -18,3 +18,4 @@
 - [ ] REACT
 
 ## Summary
+
