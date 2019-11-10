@@ -231,6 +231,10 @@ if (Number(num) == NaN) {
 }
 
 // 上面花括号里面的代码永远不会执行，因为 Number 方法得到的结果只有两种情况，要么是数字，要么是 NaN。如果得到一个数字，数字和 NaN 不相等，如果是 NaN，NaN 和 NaN 也不相等。
+if(isNaN(num)){
+    //=>检测是否为有效数字，一种方案
+    alert('num不是有效数字!')
+}
 ```
 
 ### 数据类型转换（parseInt、parseFloat方法）
