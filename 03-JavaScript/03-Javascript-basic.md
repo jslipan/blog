@@ -355,4 +355,9 @@ for (let i = 0; i < liList.length; i++) {
 		liList[i].style.backgroundColor = 'yellow';
 	}
 }
+/*
+for (var i = 1; i < boxList.length; i += 2) {
+    boxList[i].style.backgroundColor = 'lightblue';
+}
+*/
 ```
