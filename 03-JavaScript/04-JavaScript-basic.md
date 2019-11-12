@@ -58,3 +58,205 @@ sum(10,20); //=>传递的值是实参(实参是传递给形参变量的具体值
 sum(10); //=>n:10 m:undefined 设置了形参,执行的时候不传递值,默认值是undefined
 sum(10,20,30); //=>n:10 m:20
 ```
+
+## 函数的参数机制
+
+参数就是函数的入口，当我们在函数中封装一个功能，我们希望我们给他什么，它帮助我们处理啥。配合函数的定义和执行两部分；参数对应着两个部分，也有两部分构成：
+
+- 函数声明阶段：形参，形参是函数内部的变量，它也是用来代表和存储值得；
+- 函数执行阶段：实参，实参是给形参赋值的具体值。就是说函数执行时，形参所代表的具体的值。
+
+```js
+//求和函数
+function sum(a, b) {
+    // a, b都是形参
+    console.log(a, b);
+    var total = 0;
+    t0tal = a + b;
+    console.log(total);
+}
+
+sum(10, 20); // 10 和 20 是实参，当函数执行时，函数的形参 a 本次拿到的值是10，b 本次拿到20；实参的位置和形参是一一对应的。
+sum(1); //1是实参，a 本次拿到的是1，另一个没传，如果没传是 b 获取到时默认值 undefined
+sum(); //没有实参，此时a, b都是 undefined
+sum(4, 5, 6);  //4, 4, 6都是实参， a是4，b是5， 没有接收6
+```
+
+## 函数的返回值机制
+
+### 函数返回值机制
+
+> 函数除了我们给他啥，他帮助我们处理啥，还有一个重要的事就是，把处理结果给我们，例如isNaN()，会把函数执行的结果返回给我们。我们写的函数该有这样的功能。
+
+我们这里有一个求和函数，我们希望求和完成后可以拿到求得的两数之和：
+
+```js
+function sum(a,b) {
+    var total =0;
+    total = a + b;
+    console.log(total);
+}
+
+var result = sum(1,2);
+console.log(result);  //undefined
+console.log(total);  //Ucaught ReferenceError: ...
+```
+
+引发报错的原因：total 是在函数内部声明的变量，这种声明在函数体内部的变量称为私有变量，而私有变量在函数外部是无法访问的，这是由于闭包机制导致的。
+
+> 闭包（closure）：函数会保护函数体内部的变量不被外界所干扰的机制成为闭包；
+
+```js
+//修改后的求和函数代码
+function sum(a,b) {
+    var total = 0;
+    total = a + b;
+    return total;
+}
+
+var result = sum(1,2);
+console.log(result);  //3
+```
+
+## 函数含返回值的细节问题
+
+1. return用于指定函数返回值，那么 return啥 返回值是啥
+2. 如果函数内部没有return或者return后面啥也没有写，那么函数的返回值是undefined
+3. return关键字还有一个重要作用————强制结束return后面的代码。（return后面的代码不执行）
+4. return永远返回一个值，如果是表达式，return会等着表达式求值完成，然后再把值返回。
+
+
+**函数是没有重载**
+
+【练习】使用模拟函数重载来编写一个具有如下功能的函数：
+1. 如果输入参数大于三个，返回最后一个参数
+2. 如果输入参数小于三个且全部为数字，则返回排序后的数组，如果最后一个数奇数则降序排列，反之升序排列
+3. 如果输入参数小于三个且包含字符串，则将所有参数强制转化为字符串连接返回。
+
+```js
+
+function myFunc() {
+    var arguLen = arguments.length;
+    if (arguLen > 3) {              //first case
+        return arguments[arguLen - 1];
+    }
+    else if (arguLen < 3) {
+        var numFlag = true;
+        var strFlag = false;
+        for(var i = 0; i < arguLen; ++i) {
+            if(typeof arguments[i] != "number"){
+                numFlag = false;
+            }
+            if(typeof(arguments[i]) === "string"){
+                strFlag = true;
+                break;
+            }
+        }
+        if (numFlag) {    //second case
+            var args = [].slice.call(arguments, 0);  //转成数组
+            if (args[arguLen - 1] % 2 == 0) {
+                return args.sort(function(a,b){return a-b;});  //升序
+            }
+            else {
+                return args.sort(function(a,b){return b-a;}); //降序
+            }
+        }
+        else if (strFlag){  //third case
+            var result = "";
+            for (var i = 0; i < arguLen; ++i) {
+                result += String(arguments[i]);
+            }
+            return result;
+        }
+    }
+    return;
+}
+```
+
+## 二、选项卡
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>demo</title>
+		<style>
+		* {
+			margin:0;
+			padding:0
+		}
+		ul,ol {
+			list-style:none
+		}
+        .clearfix:after{ 
+			display:block;
+			visibility: hidden;
+			content:"";
+			clear:both
+		}
+		.tab {
+			width: 500px;
+			margin: 20px auto;
+		}	
+		.tab .header {
+			position: relative;
+			top: 1px;
+		}
+		.tab .header li {
+			float: left;
+			margin-right: 10px;
+			padding: 0 10px;
+			line-height: 35px;
+			cursor: pointer;
+			border: 1px solid #AAA;
+		}
+		.tab .header li.active {
+			border-bottom-color: #fff;
+		}
+		.tab .content {
+			display: none;
+			height: 150px;
+			line-height: 150px;
+			text-align: center;
+			border: 1px solid #AAA;
+		}
+		.tab .content.active {
+			display: block;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="tab" class="tab">
+			<ul class="header clearfix">
+				<li class="active">新闻</li>
+				<li>电影</li>
+				<li>音乐</li>
+			</ul>
+			<div class="content active">测试内容</div>
+			<div class="content">测试内容</div>
+			<div class="content">测试内容</div>
+		</div>
+		
+		<script src="core.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
+```
+
+```js
+~function () {
+	let tab = document.querySelector('#tab'),
+		headerList = tab.querySelectorAll('li'),
+		contentList = tab.querySelectorAll('div');
+		
+	for (let i = 0; i < headerList.length; i++) {
+		headerList[i].onclick = function () {
+			for(let j = 0; j < headerList.length; j++) {
+				headerList[j].className = "";
+				contentList[j].className = "content";
+			}
+			headerList[i].className = "active";
+			contentList[i].className = "content active";
+		}
+	}
+}();
+```
