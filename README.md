@@ -1,14 +1,18 @@
 # blog
-> Front-end self-study record. The best time to plant a tree was 10 years ago. The second best time is now. go go go!
+
+> The best time to plant a tree was 10 years ago. The second best time is now. Keep thy heart with all dilignece.
 
 ## To-Do List
 
- - [ ] Html & CSS
-   - [X] Html
-   - [ ] CSS
-   - [ ] Training: JD-homepage Demo
+- [ ] Tools
+  - [X] git
+  - [X] Linux
+- [ ] Html & CSS
+  - [X] Html
+  - [ ] CSS
+  - [ ] Training: JD-homepage Demo
 - [ ] JavaScript  
-  - [ ] ECMAScript
+  - [X] ECMAScript
   - [ ] DOM & BOM
   - [ ] Client-side Web APIs
   - [ ] Ajax
@@ -18,4 +22,3 @@
 - [ ] REACT
 
 ## Summary
-

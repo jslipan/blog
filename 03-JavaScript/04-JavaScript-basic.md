@@ -176,69 +176,68 @@ function myFunc() {
 ## 二、选项卡
 ```html
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>demo</title>
-		<style>
-		* {
-			margin:0;
-			padding:0
-		}
-		ul,ol {
-			list-style:none
-		}
-        .clearfix:after{ 
-			display:block;
-			visibility: hidden;
-			content:"";
-			clear:both
-		}
-		.tab {
-			width: 500px;
-			margin: 20px auto;
-		}	
-		.tab .header {
-			position: relative;
-			top: 1px;
-		}
-		.tab .header li {
-			float: left;
-			margin-right: 10px;
-			padding: 0 10px;
-			line-height: 35px;
-			cursor: pointer;
-			border: 1px solid #AAA;
-		}
-		.tab .header li.active {
-			border-bottom-color: #fff;
-		}
-		.tab .content {
-			display: none;
-			height: 150px;
-			line-height: 150px;
-			text-align: center;
-			border: 1px solid #AAA;
-		}
-		.tab .content.active {
-			display: block;
-		}
-		</style>
-	</head>
-	<body>
-		<div id="tab" class="tab">
-			<ul class="header clearfix">
-				<li class="active">新闻</li>
-				<li>电影</li>
-				<li>音乐</li>
-			</ul>
-			<div class="content active">测试内容</div>
-			<div class="content">测试内容</div>
-			<div class="content">测试内容</div>
-		</div>
-		
-		<script src="core.js" type="text/javascript" charset="utf-8"></script>
-	</body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type: none;
+        }
+        .clearfix::after {
+            display: block;
+            visibility: hidden;
+            content: "";
+            clear: both;
+        }
+        .tab {
+            width: 500px;
+            margin: 20px auto;
+        }
+        .tab .header {
+            position: relative;
+            top: 1px;
+        }
+        .tab .header li {
+            float: left;
+            margin-right: 10px;
+            padding: 0px 10px;
+            line-height: 35px;
+            cursor: pointer;
+            border: 1px solid #000;
+        }
+        .tab .header li.active {
+            border-bottom-color: #FFF;
+        }
+        .tab .content {
+            display: none;
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+            border: 1px solid #000;
+        }
+        .tab .content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab" id="tab">
+            <ul class="header clearfix">
+                <li class="active">新闻</li>
+                <li>电影</li>
+                <li>音乐</li>
+            </ul>
+            <div class="content active">三胖来华访问</div>
+            <div class="content">电影真好看</div>
+            <div class="content">电音抖腿神器</div>
+    </div>
+    <script src="./core.js"></script>
+</body>
 </html>
 ```
 
