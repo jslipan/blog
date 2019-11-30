@@ -135,3 +135,23 @@ yum -y install ntp
 timedatectl set-ntp yes
 ```
 
+### systemd初始化进程
+
+Linux操作系统开机过程：从BIOS开始，然后进入Boot Loader, 再加载系统内核，然后内核进行初始化，最后启动初始化进程。初始化进程作为Linux系统的第一个进程，它需要完成Linux系统中相关的初始化工作，为用户提供合适的工作环境。红帽RHEL 7系统替换了初始化进程服务System V init，正式采用全新的systemd初始化进程服务。
+
+**systemctl管理服务区别**
+| System V init | Systemctl | 作用 |
+|:---:|:---:|:---:|
+| service foo start| systmectl start foo.service | 启动服务 |
+| service foo restart | systemctl restart foo.service | 重启服务 |
+| service foo stop | systemctl stop foo.service | 停止服务 |
+| service foo reload | systemctl reload foo.service | 重新加载配置文件(不终止服务) |
+| service foo status | systemctl status foo.service | 查看服务器状态 |
+
+**systemctl设置服务区别**
+| System V init | Systemctl | 作用 |
+|:---:|:---:|:---:|
+| chkconfig foo on | systemctl enable foo.service | 开机自动启动 |
+| chkconfig foo off | systemctl disable foo.service | 开机不自动启动 |
+| chkconfig foo | systemctl is-enabled foo.service | 查看特定服务是否为开机自动启动 |
+| chkconfig --list | systemctl list-uint-files --type=service | 查看各个级别下的启动与禁用情况 |
