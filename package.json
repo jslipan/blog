@@ -1,0 +1,23 @@
+{
+  "name": "blog",
+  "main": "index.js",
+  "directories": {
+    "docs": "docs"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "gitalk": "^1.5.0",
+    "vuepress": "^1.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jslipan/blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jslipan/blog/issues"
+  },
+  "homepage": "https://github.com/jslipan/blog#readme"
+}

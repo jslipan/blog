@@ -223,7 +223,88 @@ for (var k in obj) {
 }
 ```
 
-## 五、获取DOM对象
+## 五、for of 循环
+
+for (variable of iterable) {
+  //statements
+}
+
+```js
+let iterable = [10, 20, 30];
+for (let value of iterable) {
+  value += 1;
+  console.log(value);
+}
+//11
+//21
+//31
+
+不修改语句中的变量，也可以使用const代替let
+let iterable = [10, 20, 30];
+for (const value of iterable) {
+  console.log(value);
+}
+
+// 10
+// 20
+// 30
+
+
+let iterable = "boo";
+for (let value of iterable) {
+  console.log(value);
+}
+// "b"
+// "o"
+// "o"
+
+
+let iterable = new Uint8Array([0x00, 0xff]);
+for (let value of iterable) {
+  console.log(value);
+}
+// 0
+// 255
+
+
+let iterable = new Map(["a", 1], ["b", 2], ["c", 3]);
+for (let entry of iterable) {
+  console.log(entry);
+}
+// ["a", 1]
+// ["b", 2]
+// ["c", 3]
+
+for (let [key, value] of iterable) {
+  console.log(value);
+}
+// 1
+// 2
+// 3
+
+
+let iterable = new Set([1, 1, 2, 2, 3, 3]);
+for (let value of iterable) {
+  console.log(value);
+}
+// 1
+// 2
+// 3
+
+
+(function() {
+  for (let argument of arguments) {
+    console.log(argument);
+  }
+})(1, 2, 3);
+
+// 1
+// 2
+// 3
+```
+
+
+## 六、获取DOM对象
 
 > DOM对象：我们通过 js 的相关和 html 方法获取到的 html 文档中的元素
 
@@ -294,6 +375,7 @@ for (var i = 0; i < liList.length; i++) {
 
 
 ## 六、隔行变色
+
 ```html
 <!DOCTYPE html>
 <html lang="en">

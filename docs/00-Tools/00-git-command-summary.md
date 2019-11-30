@@ -70,6 +70,7 @@ $ git push [remote] --all # 推送所有分支到远程仓库
 
 
 # 撤销
+$ git checkout HEAD -- [file]  # 撤销所有修改到HEAD版本
 $ git checkout [file] # 恢复暂存区的指定文件到工作区
 $ git checkout [commit] [file] # 恢复某个 commit 的指定文件到工作区
 $ git checkout . # 恢复上一个 commit 的所有文件到工作区
@@ -79,9 +80,16 @@ $ git reset [commit] # 重置当前分支的指针为指定 commit，同时重�
 $ git reset --hard [commit] # 重置当前分支的 HEAD 为指定 commit，同时重置暂存区和工作区，与指定 commit 一致
 $ git reset --keep [commit] # 重置当前 HEAD 为指定 commit，但保持暂存区和工作区不变
 $ git revert [commit] # 新建一个 commit，用来撤销指定 commit，后者的所有变化都将被前者抵消，并且应用到当前分支
+
+
+# 本地仓备份
+$ git clone --bare file:///c/Users/HUAWEI/Desktop/mygithub/blog/.git blog.git
+$ git remote add backup file:///c/Users/HUAWEI/Documents/gitRepoBackup/blog.git
+$ git push --set-upstream backup master
 ```
 
 ## 更多链接
+
 - [Pro Git中文版](https://git-scm.com/book/zh/v1)
 - [Git简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
 - [廖雪峰Git](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
