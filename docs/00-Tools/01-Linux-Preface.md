@@ -5,6 +5,23 @@
 - [命令大全（commandlinefu）](https://www.commandlinefu.com/commands/browse)
 - [Linux命令搜索引擎](https://wangchujiang.com/linux-command/)
 
+## 服务器概述
+
+服务器是提供计算和存储服务的设备。由于服务器需要响应服务请求，并进行处理，因此一般来说，服务器应具备承担服务及保障服务的能力。服务器的构成包括电源、处理器、硬盘、内存、系统总线等。服务器的尺寸一般用高度 U 表示（1U = 1.75in = 44.45mm）以 Dell 机架式服务器为例,R2X0到R6X0基本都是 1U 的, R7X0 或 R8X0 是 2U 的, R9X0 是 4U 的。
+
+### Raid卡
+
+Raid 磁盘冗余阵列, Raid 的实现有软 Raid (即软件实现)和硬 Raid (即硬件实现),二者主要区别就是,硬件Raid的实现性能、冗余都更好、更高。不过，在企业真正的重要服务器里，Raid 几乎是不被采用的。
+
+Raid卡的好处： 
+- 可以将所有硬盘整合到一起（扩充容量）
+- 可以使得数据更加安全（数据冗余）
+- 可以获得更高得效率（读写性能）
+
+互联网公司的服务器一般都是购买独立 Raid 卡，Raid 卡上也是有缓存的，具体说明如下：
+- 冗余好到坏： Raid1  Raid10  Raid5  Raid0
+- 性能从好到坏：Raid0  Raid10  Raid5  Raid1
+- 成本从低到高：Raid0  Raid5  Raid1  Raid10
 
 ## 操作系统发展史
 
@@ -81,6 +98,7 @@ Linux的发行商包括 Slackware、Redhat、 Debian、 Fedora、 Turbolinux、 
 
 如果你是一个Linux爱好者，想个桌面系统，并且既不想使用盗版，又不想花太多钱购买商业系统软件，那么可以选择Ubuntu桌面系统。如果你需要服务器端的Linux系统，想要使用一个比较稳定的服务器系统，或者说你的目标就是进入企业从事Linux运维工作，那么建议你选择CentOS或Red Hat。在这两者当中又应首选CentOS, 因为目前市场的趋势就是这样的，CentOS社区非常活跃。如果是对系统稳定性安全性有更高的要求，或者是有特殊使用偏好的用户，可以考虑Debian或FreeBSD。如果是特别痴迷千新技术体验和追求最新的软件版本，那么可以选择 Fedora, 但要容忍Fedora潜在的新技术软件的Bug和系统稳定性的问题。如果喜欢更好的中文环境支持，可以选择麒麟Linux……
 
+
 ### 常用虚拟机软件
 
 |虚拟机软件|特点及选择建议|
@@ -111,7 +129,7 @@ VMware虚拟机常见的网络类型有bridged(桥接)、NAT(地址转换)、hos
 
 ### 查看系统版本
 ```bash
-[jslipan@localhost ~]$ uname -m
+[jslipan@localhost ~]$ uname -m    //print the machine hardware name
 x86_64
 
 [jslipan@localhost ~]$ uname -a
