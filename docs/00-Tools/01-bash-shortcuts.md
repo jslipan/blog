@@ -58,3 +58,36 @@ Ctrl + z：挂起命令
 1. 以上介绍的大多数 Bash 快捷键仅当在 emacs 编辑模式时有效，若你将 Bash 配置为 vi 编辑模式，那将遵循 vi 的按键绑定。Bash 默认为 emacs 编辑模式。如果你的 Bash 不在 emacs 编辑模式，可通过 `set -o emacs` 设置。
 
 2. `^S、^Q、^C、^Z` 是由终端设备处理的，可用 `stty` 命令设置。
+
+### vim操作
+
+
+```bash
+# 光标定位
+hjkl  #上下左右
+0 $   #行首行尾
+gg  G   #页首页尾
+3G  #进入第三行
+/string   #查找字符，n下一个 （n N可以循环）
+
+# 文本编辑
+a i o  #插入模式
+R  #替换模式
+
+#替换  :范围 s/old/new/选项
+:1,5 s/root/yang/   #从1-5行的root替换为yang
+
+#读写文件
+:w   #存储到当前文件
+:w /tmp/aa.txt   #另存为/tmp/aa.txt
+:1,3 w /tmp/2.txt
+:r /etc/hosts  #读入文件到当前行后
+:5 r /etc/hosts  #读入文件到第5行后
+
+#设置环境
+:set nu  #设置行号
+:set ic  #不区分大小写
+:set ai  #自动缩进
+:set list  #显示控制字符
+:set nonu  #取消设置行号
+```

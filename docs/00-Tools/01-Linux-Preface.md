@@ -173,3 +173,37 @@ Linux操作系统开机过程：从BIOS开始，然后进入Boot Loader, 再加�
 | chkconfig foo off | systemctl disable foo.service | 开机不自动启动 |
 | chkconfig foo | systemctl is-enabled foo.service | 查看特定服务是否为开机自动启动 |
 | chkconfig --list | systemctl list-uint-files --type=service | 查看各个级别下的启动与禁用情况 |
+
+### Linux开关机
+
+| 关机 | 说明 |
+|:---:|:---:|
+| shutdown -h now | 立刻关机 |
+| shutdown -h +1 | 1分钟以后关机，1可以是别的数字或时间点，例如，11：00 |
+| halt | 立即停止系统，需要人工关闭电源，CentOS 7 下为 systemctl halt |
+| init 0 | 切换到运行级别0|
+| poweroff | 立即停止系统，CentOS 7下为 systemctl poweroff |
+
+```bash
+// 重启
+reboot
+systemctl reboot
+shutdown -r now
+shutdown -r +1
+init 6
+```
+
+## 常用命令
+
+### 文件管理
+
+```bash
+cd /home/jslipan    #改变目录
+cd -   #返回上次目录
+cd ~   #家目录
+
+mkdir  #创建目录 -v详细  -p递归 目录
+cp   #复制   -r目录   -v详细  -f强制  -n静默
+rm   #删除   -r递归   -f强制  -v详细过程
+mv   #移动 eg:  mv /root/file1  /tmp
+```
