@@ -9,11 +9,11 @@
   - [X] Linux
 - [ ] Html & CSS
   - [X] Html
-  - [ ] CSS
+  - [x] CSS
   - [ ] Training: JD-homepage Demo
 - [ ] JavaScript  
   - [X] ECMAScript
-  - [ ] DOM & BOM
+  - [x] DOM & BOM
   - [ ] Client-side Web APIs
   - [ ] Ajax
   - [ ] Training: Web-App
