@@ -4,21 +4,41 @@
 
 ## To-Do List
 
-- [ ] Tools
+- [ ] Ops-Tools
   - [X] git
-  - [X] Linux
-- [ ] Html & CSS
+  - [ ] SaltStack
+  - [ ] Zabbix
+  - [ ] Ansible
+  - [ ] Jenkins
+  - [ ] puppet
+  - [ ] ELK
+  - [ ] KVM
+  - [ ] OpenStack
+  - [ ] Docker
+  - [ ] K8s
+  - [ ] Hadoop
+- [X] Linux
+- [ ] Server
+  - [ ] Tomcat
+  - [ ] Nginx
+  - [ ] Database
+    - [ ] MySQL
+    - [ ] Redis
+    - [ ] MongoDB
+    - [ ] Oracle
+  - [ ] kafka
+  - [ ] RabbitMQ
+- [ ] Web
   - [X] Html
   - [x] CSS
-  - [ ] Training: JD-homepage Demo
-- [ ] JavaScript  
-  - [X] ECMAScript
-  - [x] DOM & BOM
-  - [ ] Client-side Web APIs
-  - [ ] Ajax
-  - [ ] Training: Web-App
-- [ ] VUE
-- [ ] Node
-- [ ] REACT
+  - [ ] JavaScript  
+    - [X] ECMAScript
+    - [x] DOM & BOM
+    - [ ] Client-side Web APIs
+    - [ ] Ajax
+- [ ] Node.js
+- [ ] Python
+- [ ] Java
+- [ ] Go
 
 ## Summary
