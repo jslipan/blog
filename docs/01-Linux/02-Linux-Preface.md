@@ -54,16 +54,14 @@ UNIX的两大流派：AT&T贝尔实验室（现今的SCO UNIX），加州大学�
 重要的UNIX标准包括： ANSI C、 IEE POSIX等
 
 - ANSI C
-    - ANSI　C 是美国国家标准协会（ANSI）于1983年发布的C语言标准
-    - 1989年，此标准被采纳为国际 ISO/IEC 9899：1990
-    - ISO C 标准现旨在提供应用程序的可移植性，使其能适应于不同的操作系统，而不仅仅是 UNIX 操作系统
-
+  - ANSI　C 是美国国家标准协会（ANSI）于1983年发布的C语言标准
+  - 1989年，此标准被采纳为国际 ISO/IEC 9899：1990
+  - ISO C 标准现旨在提供应用程序的可移植性，使其能适应于不同的操作系统，而不仅仅是 UNIX 操作系统
 
 - POSIX
-    - 1986年，IEEE 制定了 IEEE　P1003标准，这套标准被称为 POSIX（Potable Operating System Interface)
-    - POSIX定义了一整套的应用程序接口，包括系统调用、库函数、公共命令
-    - POSIX标准希望在源代码级别保证应用程序可移植性
-
+  - 1986年，IEEE 制定了 IEEE　P1003标准，这套标准被称为 POSIX（Potable Operating System Interface)
+  - POSIX定义了一整套的应用程序接口，包括系统调用、库函数、公共命令
+  - POSIX标准希望在源代码级别保证应用程序可移植性
 
 ### Minix
 
@@ -77,12 +75,11 @@ UNIX的两大流派：AT&T贝尔实验室（现今的SCO UNIX），加州大学�
 
 > Minix 的创始人说，MINIX 3没有统治世界是源于他在1992年犯下的一个错误，当时他认为 BSD 必然会一统天下，因为它是一个更稳定和更成熟的系统，其它操作系统难以与之竞争。因此他的MINIX的重心集中在教育上。四名 BSD 开发者已经成立了一家公司销售 BSD 系统，他们甚至还有一个有趣的电话号码1-800-ITS-UNIX。然而他们正因为这个电话号码而惹火上身。美国电话电报公司因电话号码而提起诉讼。官司打了三年才解决。在此期间，BSD 陷于停滞，而Linux 则借此一飞冲天。他的错误在于没有意识官司竟然持续了如此长的时间，以及BSD会因此受到削弱。如果美国电话电报公司没有起诉，Linux 永远不会流行起来，BSD将统治世界
 
-
 ## Linux环境准备
 
 ### Linux的发行版本介绍
 
-Linux内核(kernel)版本主要有4个系列，分别为Linuxkernel 2.2、Linuxkernel 2.4、Linux、kernel 2.6, Linux kernel3.x, inux kernel4.x, 更多更新的内核版本请浏览https://www.kernel.org/。
+Linux内核(kernel)版本主要有4个系列，分别为Linuxkernel 2.2、Linuxkernel 2.4、Linux、kernel 2.6, Linux kernel3.x, inux kernel4.x, 更多更新的内核版本请浏览https://www.kernel.org/
 
 Linux的发行商包括 Slackware、Redhat、 Debian、 Fedora、 Turbolinux、 Mandrake、SUSE、 CentOS、 Ubuntu、 红旗、麒麟．…·
 
@@ -96,22 +93,65 @@ Linux的发行商包括 Slackware、Redhat、 Debian、 Fedora、 Turbolinux、 
 
 ### Linux版本场景选择
 
-如果你是一个 Linux 爱好者，想个桌面系统，并且既不想使用盗版，又不想花太多钱购买商业系统软件，那么可以选择Ubuntu桌面系统。如果你需要服务器端的Linux 系统，想要使用一个比较稳定的服务器系统，或者说你的目标就是进入企业从事 Linux 运维工作，那么建议你选择 CentOS 或 Red Hat。在这两者当中又应首选CentOS, 因为目前市场的趋势就是这样的，CentOS 社区非常活跃。如果是对系统稳定性安全性有更高的要求，或者是有特殊使用偏好的用户，可以考虑 Debian 或 FreeBSD。如果是特别痴迷千新技术体验和追求最新的软件版本，那么可以选择 Fedora, 但要容忍 Fedora 潜在的新技术软件的Bug和系统稳定性的问题。如果喜欢更好的中文环境支持，可以选择麒麟 Linux……
+如果你是一个 Linux 爱好者，想个桌面系统，并且既不想使用盗版，又不想花太多钱购买商业系统软件，那么可以选择Ubuntu桌面系统。如果你需要服务器端的Linux 系统，想要使用一个比较稳定的服务器系统，或者说你的目标就是进入企业从事 Linux 运维工作，那么建议你选择 CentOS 或 Red Hat。在这两者当中又应首选 CentOS, 因为目前市场的趋势就是这样的，CentOS 社区非常活跃。如果是对系统稳定性安全性有更高的要求，或者是有特殊使用偏好的用户，可以考虑 Debian 或 FreeBSD。如果是特别痴迷千新技术体验和追求最新的软件版本，那么可以选择 Fedora, 但要容忍 Fedora 潜在的新技术软件的Bug和系统稳定性的问题。如果喜欢更好的中文环境支持，可以选择麒麟 Linux……
 
-### Linux系统启动流程
+### Linux系统启动流程（重要）
 
-**Redhat 7之前**
-起点从按下计算机的电源键开始。首先，计算机会加载 BIOS，这是计算机上最接近硬件的软件，BIOS 中有一项很重要的功能就是对自身的硬件做一次健康检查，只有硬件没有问题，才能运行软件（操作系统也是一种软件）。这种通电后开始的自检过程被称为“加电自检”，简称 POST（Power On Self Test）。如果所有的硬件自检通过，一般都会发出一次“滴”的短声提示，说明硬件一切正常。
+**CentOS 6**
+打开计算机电源，计算机首先会加载BIOS信息，进而对 CPU 信息、设备启动顺序信息、硬盘信息、内存信息、时钟信息等进行自检。当正确检查完所有硬件信息后，计算机就会根据 BOIS 里的设置读取相应的启动系统里的硬件设备，如果预先设定了从硬盘启动加载系统，那么 BOIS 就会读取硬盘的 MBR（即0磁道0柱面1扇区的前446字节），接下来才开始加载内核文件，然后交由 Linux 来控制系统运行。
 
-机器自检通过后，下面就要引导系统了。这个动作是 BOIS 设定的，BIOS默认会从硬盘上的第０柱面、第０磁道、第一个扇区中读取被称为 MBR 的东西，即主导记录。一个扇区的大小是512字节，存放的内容是一段引导程序和分区信息，其中引导程序部分占446字节，另外64字节是磁盘分区表 DPT，最后两字节是MBR的结束位。这512字节的空间内容是由专门的分区程序产生的，比如说 windows 下的 fdisk.exe，或者 Linux 下的 fdisk 命令，所以它不依赖于任何操作系统，而MBR中的引导程序可以修改的，所以可以利用这个特性实现多操作系统共存。由于 RedHat、CentOS 默认会使用 Grub 作为其引导操作系统的程序，而 Grub 本身又比较大，所以常见的方式是在 MBR 中写入 Grub 的地址，这样系统实际会载入 Grub 作为操作系统的引导程序。
+MBR 全称为 Master Boot Record，即主引导记录，它位于磁盘上的0磁道0柱面1扇区，整个大小512字节，MBR 里面存放了系统预启动信息、分区表信息及分区标志等。
 
-经过了上面的步骤，第三步就是顺理成章地运行Grub了，Grub最重要的功能就是根据其配置文件加载 Kernel 镜像，并运行内核的第一个程序 /sbin/init,这个程序会根据 /etc/inittab 来初始化的工作。其实这里最重要的就是根据文件中设定的值来确定系统将会运行的 runlevel，默认 runlevel 定义在 "id:3:initdefault:" 中，其中的数字3说明目前的运行级别定义为3.
+在 MBR 的512字节中，第一部分为引导记录区，占有前446字节大小，其作用是找到标志为活动的分区，并将活动分区的引导记录读入内存。
 
-第四步，Linux 将根据 /etc/inittab 中定义的系统初始化配置 si::sysinit:/etc/rc.sysinit 执行 /etc/rc.sysinit 脚本，该脚本将会设置系统变量、网络配置，并启动 swap、设定 /prc、 加载用户自定义模块、加载内核设置等。
+第二部分为分区表，占有后面剩下全部的66字节大小，用于记录磁盘的分区信息，这其中，前64字节是磁盘分区表信息，后2字节是分区的结束标志。
 
-第五步是根据第三步读到的 runlevel 值来启动对应的服务器，如果值为3，就会运行 /etc/rc3.d/ 下的所有脚本，如果值为5，就会运行 /etc/rc5.d/ 下的所有脚本。
+计算机读取 BIOS 所指定的磁盘 MBR 信息之后，就会将其读入到内存中。被读入到内存中执行的其实就是 Boot Loader（引导加载程序），对应于 Linux 系统，就是加载 Grub 信息。
 
-第六步将运行 /etc/rc.local，第七步会生成终端或 X Window 来等待用户登录。
+引导加载程序（Boot Loader）是计算机在加载操作系统内核之前运行的一段小程序。这段小程序可以初始化硬件设备、建立内存空间的映射图，从而将系统的软硬件环境加载到一个适合的状态，以便为最终调用操作系统内核做好准备。引导加载程序读取 grub.conf 文件配置信息，然后根据对应的配置信息来启动不同的操作系统。
+
+加载完内核的相关文件以后，系统第一个运行的程序为 /sbin/init，因此，init 进程对应的进程号永远为1，相当于是所有 Linux 进程的祖先
+
+此时 init 程序会读取 /etc/inittab 文件，并根据此文件来进行初始化工作， /etc/inittab 文件主要作用就是设定了 Linux 以什么样的运行级别启动，其设定被配置是"id:3:initdefault"，其中的3就是表明 Linux 需要运行在3级别上。
+
+CentOS6 以前的版本，init 进程会根据 inittab 的设置加载 /etc/rc.d/rc.sysinit，并进行初始化。例如：设置主机名、设置欢迎信息、激活udev 和 selinux、加载 /etc/fstab（挂载磁盘设备等）、设置系统时钟、读取 /etc/sysctl.conf 设置内核参数、激活 lvm 及 software raid 设备、加载额外设备的驱动程序、各种清理操作（如清理日志）等。
+
+CentOS6 以后，init 进程不再读取 inittab 加载 /etc/rc.d/rc.sysinit，而是读取 /etc/init/rcS.conf 文件加载 /etc/rc.d/rc.sysinit,并对系统进行初始化系统设置。
+
+init 进程加载内核相关模块，CentOS5 下是读取 /etc/modules.d 目录下对的文件来加载内核模块，而在 CentOS 6 下则是加载 /etc/sysconfig/modules/ 下的内核模块。
+
+init 进程执行对应运行运行级别下的脚本，根据系统设定运行级别的不同，系统会运行 rc0.d 到 rc6.d 中相应脚本程序，从而完成相应的初始化工作，以及启动相应的服务。在 CentOS6 以后的版本中，init 进程不再读取 inittab 加载运行级别对应的脚本，而是读取 /etc/init/rc.conf 加载指定运行级别下的脚本
+
+rc.local 就是在系统做好一切初始化工作之后，留给管理员自主设置的一个文件，可以将需要跟随计算机启动的程序启动命令放置到这里。
+
+系统读取 /etc/init/tty.conf（早期也是读取 inittab 进行设置的），设置对应运行级别的终端，启动 mingetty，进入登录前的状态。
+
+1) 开启开机按钮，计算机加载 BIOS 自检
+2) 读取 MBR 信息
+3) 加载 Grub 菜单（Boot Loader，引导加载程序）
+4) 加载 Kernel 内核以及驱动程序
+5) 启动 init 进程，读取 inittab 文件
+6) init 进程执行 rc.sysinit 初始化系统
+7) init 进程加载内核相关模块
+8) init 进程执行对应运行级别下的脚本
+9) 加载 /etc/rc.local 
+10) 启动mingetty，进入登录前的状态
+
+**CentOS 7**
+
+1) 开启开机按钮，计算机加载 BIOS 自检
+2) 读取 MBR 信息
+3) 加载 Grub 菜单
+4) 加载 Kernel 内核以及驱动程序
+5）启动 systemd 进程，加载如下文件：
+
+1. 执行 initrd.target (/usr/lib/systemd/system/initrd.target) 包含挂载 /etc/fstab 文件中的文件系统
+2. systemd 执行默认的 target 配置，默认的启动文件是 /etc/systemd/system/default.target，根据它的指向可以找到系统要进入的模式
+3. systemd 执行 sysinit.target, 初始化系统加载 basic.target 准备启动系统
+4. systemd 启动 multi-user.target（生产工作模式）下的服务程序，即开机自启动的程序，程序目录为 /etc/systemd/system 和 /usr/lib/systemd/system.
+5. systemd 执行 multi-user.target 下的 /etc/rc.d/rc.local 内容
+6. systemd 执行 multi-user.target 下的 getty.target 及登录服务
+7. systemd 执行 graphical 所需要的服务（如果安装了图形桌面功能）
 
 ### 常用虚拟机软件
 
@@ -141,7 +181,18 @@ VMware虚拟机常见的网络类型有bridged(桥接)、NAT(地址转换)、hos
 
 ## 基本配置
 
+### 系统软件包安装
+
+```bash
+yum group install "Compatibility libraries" "Base" "Development tools"
+
+yum group install "debugging Tools" "Dial-up Networking Support"
+
+yum install psmisc net-tools bash-completion vim-enhanced -y
+```
+
 ### 查看系统版本
+
 ```bash
 [jslipan@localhost ~]$ uname -m    //print the machine hardware name
 x86_64
@@ -154,6 +205,7 @@ Linux localhost.localdomain 3.10.0-862.el7.x86_64 #1 SMP Fri Apr 20 16:44:24 UTC
 ```
 
 ### 修改更新源
+
 ```bash
 curl -s -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 curl -s -o /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
